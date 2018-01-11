@@ -1,1 +1,2 @@
-* 1 * * * /clueso/bin/table-compactor.sh /clueso/conf/application.conf 4 > /proc/1/fd/1 2>/proc/1/fd/2
+# The final argument number should match number of executor instances in the livy.conf file
+0 20 * * * root /clueso/bin/table-compactor.sh /clueso/conf/application.conf local 5
