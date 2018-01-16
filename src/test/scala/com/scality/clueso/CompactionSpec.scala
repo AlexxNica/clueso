@@ -49,7 +49,7 @@ class CompactionSpec extends WordSpec with Matchers with SparkContextSetup {
           SparkUtils.parquetFilesFilter).length shouldEqual numberParquetFiles.toInt
 
         //compact
-        compactor.compactLandingPartition("bucket", "", 1, true)
+        compactor.compact(1, true)
 
         // landing should be empty
         fs.listStatus(new Path(config.landingPathUri, s"bucket=$bucketName"), SparkUtils.parquetFilesFilter).length shouldEqual 0
